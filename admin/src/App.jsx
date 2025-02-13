@@ -7,7 +7,7 @@ import List from './pages/list/List'
 import Orders from './pages/Orders/Orders'
 import {ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { urlToHttpOptions } from 'node:url'
+// import { urlToHttpOptions } from 'node:url'
 
 const App = () => {
   const url="http://localhost:4000"
@@ -19,9 +19,9 @@ const App = () => {
       <div className="app-content">
         <Sidebar/>
         <Routes>
-          <Route path="/add" element={<Add url={url}/>}/>
-          <Route path="/list" element={<List url={url}/>}/>
-          <Route path="/orders" element={<Orders url={url}/>}/>
+          <Route path='/add' element={<Add url={url}/>}/>
+          <Route path='/list' element={<List url={url}/>}/>
+          <Route path='/orders' element={<Orders url={url}/>}/>
        
         </Routes>
       </div>
