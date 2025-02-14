@@ -1,33 +1,78 @@
-.sidebar{
-    width: 18%;
+
+.sidebar {
+    width: 250px;
     min-height: 100vh;
-    border: 1.5px solid #a9a9a9;
-    border-top: 0;
-    font-size: max(1vw,10px);
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding: 20px 10px;
+    position: fixed;
+    top: 60px; /* Moves below the navbar */
+    left: 0;
+    transition: all 0.3s ease-in-out; 
+    z-index: 1000; /* 👈 Increased Z-INDEX to keep sidebar always on top */
 }
-.sidebar-options{
-    padding-top: 50px;
-    padding-left: 20%;
+
+/* 👇 Ensuring the main content (form) doesn't overlap the sidebar */
+.app-content {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    margin-left: 250px; /* 👈 Moves main content to the right of the sidebar */
+    padding: 20px;
+    width: calc(100% - 250px);
+    transition: all 0.3s ease-in-out;
 }
-.sidebar-option{
+
+.sidebar-option {
     display: flex;
     align-items: center;
     gap: 12px;
-    border: 1px solid #a9a9a9;
-    border-right:0;
-    padding: 8px 10px;
-    border-radius: 3px 0px 0px 3px;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
     cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
-.sidebar-option.active{
-    background-color: #fff0ed;
-    border-color: tomato;
+
+.sidebar-option:hover, 
+.sidebar-option.active {
+    background-color: rgba(255, 99, 71, 0.2);
+    color: tomato;
 }
-@media (max-width:900px){
-    .sidebar-option p{
-        display: none;
+
+.sidebar-option img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ✅ Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px 8px;
+    }
+    .app-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
     }
 }
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 180px;
+        padding: 10px 5px;
+    }
+    .sidebar-option {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .sidebar-option img {
+        width: 20px;
+        height: 20px;
+    }
+    .app-content {
+        margin-left: 180px;
+        width: calc(100% - 180px);
+    }
+}
+

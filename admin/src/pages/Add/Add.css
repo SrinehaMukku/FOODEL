@@ -1,35 +1,119 @@
-.add{
-    width: 70%;
-    margin-left: max(5vw,25px);
-    margin-top: 50px;
-    color: #6d6d6d;
-    font-size: 16px;
-}
-.add form{
-    gap:20px;
-}
-.add-img-upload img{
-    width:120px;
-}
-.add-product-name, .add-product-description{
-    width:max(40%,280px);
-}
-.add-product-name input, .add-product-description textarea{
-    padding:10px;
-}
-.add-category-price{
+
+.add {
+    position: relative;
+    top: 80px; /* 👈 Moves form below navbar */
+    margin: 0 auto;
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;  /* 👈 Proper border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 👈 Soft shadow */
     display: flex;
-    gap:30px;
+    flex-direction: column;
+    gap: 15px;
 }
-.add-category-price select,.add-category-price input{
-    max-width:120px;
-    padding:10px;
+
+.add form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-.add-btn{
-    max-width: 120px;
-    border: none;
-    padding: 10px;
-    background-color: black;
-    color: white;
+
+.add-img-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 1px dashed #bbb;
+    padding: 15px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-img-upload:hover {
+    border-color: tomato;
+    background-color: rgba(255, 99, 71, 0.05);
+}
+
+.add-img-upload img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.add-product-name,
+.add-product-description,
+.add-category,
+.add-price {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.add input,
+.add select,
+.add textarea {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.add input:focus,
+.add select:focus,
+.add textarea:focus {
+    border-color: tomato;
+    box-shadow: 0px 0px 5px rgba(255, 99, 71, 0.4);
+}
+
+.add-category-price {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.add-category {
+    flex: 1;
+}
+
+.add-price {
+    flex: 1;
+}
+
+.add-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: tomato;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #e65c4f;
+}
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+    .add {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .add-category-price {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .add {
+        width: 90%;
+    }
 }

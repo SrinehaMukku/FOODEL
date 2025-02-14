@@ -1,12 +1,56 @@
-.navbar{
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4%;
+    padding: 0 20px;
+    border-bottom: 2px solid #e0e0e0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Higher than sidebar */
 }
-.navbar .logo{
-    width: max(30%,80px);
+
+
+.logo {
+    height: 40px;
+    cursor: pointer;
 }
-.navbar .profile{
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile {
+    height: 40px;
     width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    transition: 0.3s;
 }
+
+.profile:hover {
+    border-color: tomato;
+}
+
+/* ✅ Responsive for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+    }
+    .logo {
+        height: 35px;
+    }
+    .profile {
+        height: 35px;
+        width: 35px;
+    }
+}
+
