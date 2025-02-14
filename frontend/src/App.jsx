@@ -12,15 +12,16 @@ import {
 } from 'react-router-dom';
 
 const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
+  const [category, setCategory] = useState("All"); // Manage selected category
 
-  const [showLogin, setShowLogin] = useState(false)
   return (
     <>
-      {showLogin ? <LoginPopup setShowLogin={setShowLogin}/> : <></>}
+      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
       <div className='app'>
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home category={category} setCategory={setCategory} />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/place' element={<PlaceOrder />} />
         </Routes>
@@ -31,6 +32,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
