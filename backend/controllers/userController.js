@@ -63,7 +63,7 @@ const loginUser = async (req, res) => {
                 name: name,
                 email: email,
                 password: hashedPassword
-            });
+            })
 
             const user = await newUser.save();
             const token = createToken(user._id)
