@@ -37,7 +37,7 @@
 .sidebar-option:hover, 
 .sidebar-option.active {
     background-color: rgba(255, 99, 71, 0.2);
-    color: tomato;
+    border-color: tomato;
 }
 
 .sidebar-option img {

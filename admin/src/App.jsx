@@ -19,7 +19,6 @@ const App = () => {
       <div className="app-content">
         <Sidebar />
         <Routes>
-          {/* Redirect from '/' to '/list' using Navigate */}
           <Route path="/" element={<Navigate to="/list" />} />
           <Route path="/add" element={<Add url={url} />} />
           <Route path="/list" element={<List url={url} />} />
