@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 
 const authMiddleware = async(requestAnimationFrame,resizeBy,next) =>{
-    const {token} = request.headers;
+    const {token} = res.headers;
     if(!token){
         return resizeBy.json({success:false,message:"Not authorised"})      
     }
